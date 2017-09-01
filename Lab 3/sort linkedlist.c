@@ -75,7 +75,7 @@ void insert()
         printf("Out of memory space\n");
         return;
     }
-    printf("Enter the position at which you ant to be inserted: ");
+    printf("Enter the position at which you want to insert: ");
     scanf("%d",&pos);
     printf("Enter the data to be added to List: ");
     scanf("%d",&temp->data);
