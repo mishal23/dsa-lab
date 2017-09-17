@@ -49,13 +49,17 @@ void main()
                 opr2=pop();
                 switch(prefix[i])
                 {
-                    case '+': res=opr1+opr2;
+                    case '+':
+                        res=opr1+opr2;
                         break;
-                    case '-': res=opr1-opr2;
+                    case '-':
+                        res=opr1-opr2;
                         break;
-                    case '*': res=opr1*opr2;
+                    case '*':
+                        res=opr1*opr2;
                         break;
-                    case '/': res=opr1/opr2;
+                    case '/':
+                        res=opr1/opr2;
                         break;
                 }
                 push(res);
