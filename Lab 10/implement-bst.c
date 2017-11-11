@@ -108,34 +108,49 @@ struct node* deleteNode(struct node *root,int key)
 int main()
 {
 	struct node *root = NULL;
-	root = insert(root,50);
-	insert(root,30);
-	insert(root,20);
-	insert(root,40);
-	insert(root,70);
-	insert(root,60);
-	insert(root,80);
-	printf("\nInorder traversal of the tree:\n");
-	inorder(root);
+	int data,choice,count=0;
+	while(1)
+	{
+		printf("Enter your choice: ");
+		scanf("%d",&choice);
+		switch(choice)
+		{
+			case 0:
+			if(count==0)
+			{
+				printf("Enter value of head: ");
+				scanf("%d",&data);
+				root = insert(root,data);
+				count++;
+			}
+				break;
+			case 1:
+				printf("Enter data to insert: ");
+				scanf("%d",&data);
+				root = insert(root,data);
+				printf("\n");
+				break;
+			case 2:
+				printf("\nMinimum value in the tree: %d\n", minValue(root));
+				printf("Maximum value in the tree: %d\n", maxValue(root));
+				printf("\n");
+				break;
 
-	printf("\nMinimum value in the tree: %d\n", minValue(root));
-	printf("Maximum value in the tree: %d\n", maxValue(root));
-	printf("\nDeleting 20\n");
-	root=deleteNode(root,20);
-
-	printf("\nNew inorder traversal of the tree\n");
-	inorder(root);
-
-	printf("\nDeleting 30\n");
-	root=deleteNode(root,30);
-
-	printf("\nNew inorder traversal of the tree\n");
-	inorder(root);
-
-	printf("\nDeleting 50\n");
-	root=deleteNode(root,50);
-
-	printf("\nNew inorder traversal of the tree\n");
-	inorder(root);
+			case 3:
+				printf("Enter element to delete: ");
+				scanf("%d",&data);
+				root = deleteNode(root,data);
+				printf("\n");
+				break;
+			case 4:
+				printf("Inorder traversal\n");
+				inorder(root);
+				printf("\n");
+				break;
+			default:
+				printf("Wrong choice\n");
+		}
+	
+	}
 	printf("\n");
 }
